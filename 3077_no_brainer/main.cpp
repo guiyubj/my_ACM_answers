@@ -8,7 +8,6 @@ int main(){
 
 	short arr_dataset[i_dataset_num << 1];
 
-
 	short i_brain_eat;
 	short i_brain_required;
 	for(short j=0; j<i_dataset_num; j++){
