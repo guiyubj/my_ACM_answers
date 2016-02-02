@@ -39,21 +39,17 @@ int main(){
 	cin >> i_dataset_num;
 
 	vector<long long> v_dataset;
-	// cout << "v_dataset size: " << sizeof(v_dataset) << endl;
 
 	for(int j=0; j<i_dataset_num; j++){
 		int i_dataset;
 		long long i_datum;
 		cin >> i_dataset >> i_datum;
-		// cout << "line: " << j << ", " << i_dataset << " " << i_year<<endl;
 		v_dataset.push_back(i_datum);
 	}
 
-	// cout << "v_dataset size: " << sizeof(v_dataset) << endl;
 
 	for(int j=0; j<i_dataset_num; j++){
 		array<long long, 3> arr_return = calc(v_dataset[j]);
-		// cout << "datum: " << v_dataset[j] << endl;
 		cout << j+1 << " " << arr_return[0] << " " << arr_return[1]\
 		<< " " << arr_return[2] << endl;
 	}
