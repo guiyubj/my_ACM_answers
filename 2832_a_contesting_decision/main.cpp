@@ -9,7 +9,7 @@ int main(){
 	int i_dataset_num;
 	cin >> i_dataset_num;
 
-	//get and store input data
+	//create variables to store and process input
 	std::vector<string> v_teamnames;
 	std::vector<int> v_solved_problem_num;
 	std::vector<int> v_penalty_points;
@@ -18,6 +18,8 @@ int main(){
 	int arr_sub_and_time[9];
 	int i_solved_problem_num;
 	int i_penalty_points;
+	
+	//start processing input
 	for(int j=0; j<i_dataset_num; j++){
 		//reset
 		i_solved_problem_num = 0;
@@ -32,16 +34,12 @@ int main(){
 		//calc solved questions and penalty points
 		for(short j=0; j<4; j++){
 			if(arr_sub_and_time[j * 2 + 1] > 0){
-				// cout << "arr_sub_and_time[j * 2 +1] : " << arr_sub_and_time[j * 2 + 1] <<endl;
 				i_solved_problem_num++;
-				// cout << arr_sub_and_time[j * 2] << " " << arr_sub_and_time[j * 2 + 1];
 				i_penalty_points += (arr_sub_and_time[j * 2] - 1) * 20;
 				i_penalty_points += arr_sub_and_time[j * 2 + 1];
-				// cout << "penalty points: " << i_penalty_points <<endl;
 			}
 		}
 
-		// cout << "solved problem: " << i_solved_problem_num << endl;
 
 		v_teamnames.push_back(str_teamname);
 		v_solved_problem_num.push_back(i_solved_problem_num);
