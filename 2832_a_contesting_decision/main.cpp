@@ -31,14 +31,17 @@ int main(){
 
 		//calc solved questions and penalty points
 		for(short j=0; j<4; j++){
-			if(arr_sub_and_time[j << 1 + 1] > 0){
+			if(arr_sub_and_time[j * 2 + 1] > 0){
+				// cout << "arr_sub_and_time[j * 2 +1] : " << arr_sub_and_time[j * 2 + 1] <<endl;
 				i_solved_problem_num++;
-				cout << arr_sub_and_time[j << 1] << " " << arr_sub_and_time[j << 1 + 1];
-				i_penalty_points += (arr_sub_and_time[j << 1] - 1) * 20;
-				i_penalty_points += arr_sub_and_time[j << 1 + 1];
-				cout << "penalty points: " << i_penalty_points <<endl;
+				// cout << arr_sub_and_time[j * 2] << " " << arr_sub_and_time[j * 2 + 1];
+				i_penalty_points += (arr_sub_and_time[j * 2] - 1) * 20;
+				i_penalty_points += arr_sub_and_time[j * 2 + 1];
+				// cout << "penalty points: " << i_penalty_points <<endl;
 			}
 		}
+
+		// cout << "solved problem: " << i_solved_problem_num << endl;
 
 		v_teamnames.push_back(str_teamname);
 		v_solved_problem_num.push_back(i_solved_problem_num);
@@ -73,4 +76,8 @@ int main(){
 	cout << v_teamnames[v_team_with_max_solved[i_winning_team]] \
 	<< " " << i_max_solved_problem << " " << i_min_penalty_point << endl;
 
+	cin.ignore();
+	cin.ignore();
+
+	return 0;
 }
