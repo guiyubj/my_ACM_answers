@@ -52,6 +52,10 @@ int main(){
 	//get input content
 	while(getline(cin, str_temp_line)){
 
+		if(str_temp_line == "ENDOFINPUT"){
+			return 0;
+		}
+
 		if(str_temp_line == "START"){
 
 			getline(cin, str_temp_line);
@@ -59,11 +63,13 @@ int main(){
 			decrypt_str(str_temp_line);
 
 			cout << str_temp_line << endl;
+
+			getline(cin, str_temp_line);
+			if (str_temp_line == "END") {
+				str_temp_line = "";
+			}
 		}
 
-		if(str_temp_line == "ENDOFINPUT"){
-			return 0;
-		}
 	}
 
 	return 0;
